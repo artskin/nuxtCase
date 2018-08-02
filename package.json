@@ -1,0 +1,14 @@
+{
+    "name": "nuxtapp",
+    "scripts": {
+        "dev": "nuxt"
+    },
+    "dependencies": {
+        "echarts": "^4.1.0",
+        "mockjs": "^1.0.1-beta3",
+        "nuxt": "^1.4.1"
+    },
+    "devDependencies": {
+        "d3": "^5.5.0"
+    }
+}
