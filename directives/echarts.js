@@ -1,16 +1,15 @@
 import Vue from 'vue';
 import echarts from 'echarts';
-console.log(echarts)
 
 export default {
     bind: (el, binding) => {
+        // console.log(el);
+        // console.log(binding);
         Vue.nextTick(() => {
             el.echartsInstance = echarts.init(el);
-
             el.resizeEventHandler = function () {
                 el.echartsInstance.resize();
             };
-
             if ( window.attachEvent ) {
                 window.attachEvent('onresize', el.resizeEventHandler);
             } else {
@@ -25,7 +24,6 @@ export default {
     },
     unbind: (el) => {
         el.echartsInstance.dispose();
-
         if ( window.attachEvent ) {
             window.detachEvent('onresize', _this.resizeEventHandler);
         } else {

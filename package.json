@@ -6,9 +6,11 @@
     "dependencies": {
         "echarts": "^4.1.0",
         "mockjs": "^1.0.1-beta3",
-        "nuxt": "^1.4.1"
+        "nuxt": "^1.4.1",
+        "vue-echarts": "^3.0.9"
     },
     "devDependencies": {
-        "d3": "^5.5.0"
+        "d3": "^5.5.0",
+        "webpack-node-externals": "^1.7.2"
     }
 }

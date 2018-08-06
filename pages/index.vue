@@ -2,24 +2,26 @@
 <div>
     <h1>hello {{msg}}</h1>
     <div id="d3svg"></div>
-    <div id="myechart" v-echarts="lineChartOption" style="width:300px;height:200px">
-
-    </div>
+    <div ref='myBox' style="width:300px;height:300px"></div>
+    <div id="mychart" v-echarts="lineChartOption" style="width:300px;height:200px"></div>
 </div>
     
 </template>
 <script>
 
 import * as d3 from 'd3';
-import V_Echarts from '../directives/echarts';
+//import V_Echarts from '../directives/echarts';
 import echarts from 'echarts';
+//console.log(V_Echarts);
+
+//Vue.component('chart', ECharts)
 
 var _this = this;
 
 export default {
-    directives: {
-        'echarts': V_Echarts
-    },
+    // directives: {
+    //     'echarts': V_Echarts
+    // },
     data(){
         return{
             msg:'nuxtjsCase',
@@ -61,19 +63,19 @@ export default {
             dom.attr("height","100")
         },
         drawEchart(){
-            console.log(echarts)
-           let myChart = echarts.init(document.getElementById('myechart'));
-           myChart.setOption({
-                title: { text: 'ECharts 入门示例' },
+            //console.log(echarts)
+            let myChart = echarts.init(this.$refs.myBox);
+            myChart.setOption({
+                title: { text: 'ECharts 示例' },
                 tooltip: {},
                 xAxis: {
-                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
                 },
                 yAxis: {},
                 series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
                 }]
             });
         }
